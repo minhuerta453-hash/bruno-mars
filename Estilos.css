@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #ffd166;
+    --red: #ff3155;
+    --dark: #090909;
+    --white: #fff8ed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 40px 7%;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    text-align: center;
+    background:
+        radial-gradient(ellipse at top, #58201d 0%, transparent 45%),
+        radial-gradient(ellipse at bottom right, #3b164b 0%, transparent 35%),
+        var(--dark);
+    overflow-x: hidden;
+}
+
+/* Título principal estilo concierto */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow:
+        0 0 10px #ffb700,
+        0 0 25px #ff6b00,
+        0 0 55px #ff3155;
+    animation: titleGlow 2.5s infinite alternate;
+    margin: 20px 0 35px;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px #ffb700, 0 0 20px #ff3155;
+    }
+    to {
+        text-shadow: 0 0 25px #ffd166, 0 0 50px #ff3155,
+                     0 0 75px #ff3155;
+    }
+}
+
+/* Fotografía del artista */
+img {
+    display: block;
+    width: min(100%, 750px);
+    height: auto;
+    margin: 35px auto;
+    border: 3px solid var(--gold);
+    border-radius: 22px;
+    box-shadow: 0 0 20px #ffb70080, 0 0 55px #ff315540;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+img:hover {
+    transform: scale(1.025);
+    box-shadow: 0 0 30px #ffd166, 0 0 70px #ff315580;
+}
+
+/* Subtítulo */
+h2 {
+    max-width: 900px;
+    margin: 40px auto 25px;
+    color: var(--red);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    line-height: 1.5;
+    text-shadow: 0 0 15px #ff315566;
+}
+
+/* Biografía */
+p {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 24px;
+    color: #f7e9d7;
+    background: linear-gradient(135deg, #211718, #17131b);
+    border: 1px solid #ffd16670;
+    border-left: 5px solid var(--gold);
+    border-radius: 14px;
+    text-align: left;
+    line-height: 1.9;
+    font-size: 1rem;
+    box-shadow: 0 8px 25px #0008;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+p:hover {
+    transform: translateY(-4px);
+    border-color: var(--red);
+}
+
+/* Reproductores multimedia */
+audio,
+video {
+    display: block;
+    width: min(100%, 750px);
+    margin: 30px auto;
+    border-radius: 15px;
+}
+
+audio {
+    filter: sepia(20%) saturate(1.4);
+}
+
+video {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 25px #ffb70035;
+    background: #000;
+}
+
+/* Selección de texto */
+::selection {
+    color: #000;
+    background: var(--gold);
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 25px 5%;
+    }
+
+    h1 {
+        letter-spacing: 2px;
+    }
+
+    p {
+        padding: 17px;
+        font-size: 0.93rem;
+    }
+
+    img {
+        border-radius: 14px;
+    }
+}
